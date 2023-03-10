@@ -11,6 +11,15 @@
   min-height: 100vh;
 }
 
+.con{
+  align-items: center;
+  background-color: #0fb5b5;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
 .description {
   display: inherit;
   justify-content: inherit;

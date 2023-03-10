@@ -5,7 +5,9 @@ import {
   Link,
   NavLink,
   Navigate,
-} from "react-router-dom";
+} 
+
+from "react-router-dom";
 import Home from "./pages/home";
 import AddPassword from "./pages/appPassword";
 import PrivateKey from "./pages/privateKey";
@@ -16,6 +18,15 @@ import { useEffect, useState } from "react";
 import ProtectedRoute from "./utils/ProtectedRoutes";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  const spinner = document.getElementById("spinner");
+  if(spinner) {
+    setTimeout(()=>{
+      spinner.style.display = "none";
+      setLoading(false);
+    }, 3000);
+  }
+
   const [accessToken, setAccessToken] = useState(null);
   const [privateKey, setPrivateKey] = useState(null);
   useEffect(() => {
